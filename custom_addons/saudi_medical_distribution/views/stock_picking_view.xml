@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherit_cold_chain" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.cold.chain</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button name="action_release_for_distribution"
+                        string="Release for Distribution"
+                        type="object"
+                        class="btn-primary"
+                        invisible="picking_type_code != 'incoming'"/>
+            </xpath>
+
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="transit_temperature_recorded"
+                       invisible="picking_type_code != 'incoming'"/>
+                <field name="cold_chain_compliant"
+                       widget="boolean_toggle"
+                       invisible="picking_type_code != 'incoming'"/>
+            </xpath>
+
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="SFDA Cold Chain Audit"
+                      invisible="picking_type_code != 'incoming'">
+                    <group>
+                        <field name="temperature_deviation_notes"
+                               placeholder="Enter notes if temperature excursion occurred during transport..."/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

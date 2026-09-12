@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_product_template_form_inherit_sfda" model="ir.ui.view">
+        <field name="name">product.template.form.inherit.sfda</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']" position="inside">
+                <group string="SFDA &amp; Cold Chain Compliance">
+                    <field name="sfda_registration_no"/>
+                    <field name="is_cold_chain"/>
+                    <field name="min_temperature" invisible="not is_cold_chain"/>
+                    <field name="max_temperature" invisible="not is_cold_chain"/>
+                    <field name="tracking"/>
+                    <field name="use_expiration_date"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

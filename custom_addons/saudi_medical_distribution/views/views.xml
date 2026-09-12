@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="saudi_medical_distribution.list">
+      <field name="name">saudi_medical_distribution list</field>
+      <field name="model">saudi_medical_distribution.saudi_medical_distribution</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="saudi_medical_distribution.action_window">
+      <field name="name">saudi_medical_distribution window</field>
+      <field name="res_model">saudi_medical_distribution.saudi_medical_distribution</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="saudi_medical_distribution.action_server">
+      <field name="name">saudi_medical_distribution server</field>
+      <field name="model_id" ref="model_saudi_medical_distribution_saudi_medical_distribution"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="saudi_medical_distribution" id="saudi_medical_distribution.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="saudi_medical_distribution.menu_1" parent="saudi_medical_distribution.menu_root"/>
+    <menuitem name="Menu 2" id="saudi_medical_distribution.menu_2" parent="saudi_medical_distribution.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="saudi_medical_distribution.menu_1_list" parent="saudi_medical_distribution.menu_1"
+              action="saudi_medical_distribution.action_window"/>
+    <menuitem name="Server to list" id="saudi_medical_distribution" parent="saudi_medical_distribution.menu_2"
+              action="saudi_medical_distribution.action_server"/>
+-->
+  </data>
+</odoo>
